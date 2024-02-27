@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+	int i,n,last,middle,first,search,arr[5];
+	printf("enter the size");
+	scanf("%d",&n);
+	printf("enter the elements");
+	for(i=0;i<=n;i++)
+	scanf("%d",&arr[i]);
+	printf("enter the search value");
+	scanf("%d",&search);
+	first=0;
+	last=n-1;
+	middle=(first+last)/2;
+	while(first<=last)
+	{
+		if(arr[middle]<search)
+		{
+			printf("%d found at %d",search,middle+1);
+			break;
+		}
+		else
+		last=middle-1;
+		middle=(first+last)/2;
+	}
+	if(first>last)
+	printf("%d isnt found",search);
+	return 0;
+}
